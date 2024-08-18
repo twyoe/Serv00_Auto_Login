@@ -20,7 +20,7 @@ async function delayTime(ms) {
     const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
 
-    let url = `https://panel${panelnum}.serv00.com/login/?next=/`;
+    let url = `https://${panelnum}/login/?next=/`;
 
     try {
       // 修改网址为新的登录页面
@@ -70,7 +70,7 @@ async function delayTime(ms) {
       await browser.close();
 
       // 用户之间添加随机延时
-      const delay = Math.floor(Math.random() * 8000) + 1000; // 随机延时1秒到8秒之间
+      const delay = Math.floor(Math.random() * (135000 - 90000 + 1)) + 90000; // 随机延时1秒到8秒之间
       await delayTime(delay);
     }
   }
